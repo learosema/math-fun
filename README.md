@@ -9,4 +9,4 @@ Also, the test framework is also fairly minimal; it's just a wrapper around `con
 
 At this time of writing, I needed the [ESM](https://npmjs.com/package/esm) package to get the ES module syntax to work with the current stable node. So, run a `npm install` before running the tests via `npm test`.
 
-Alternatively, you can start a web server inside the project and execute the tests directly in the browser, without the need to install any npm dependencies. `npm run server` starts a web server via `npx http-server`, use any web server you like, or just test it on the [github page](https://terabaud.github.io/math-fun/) of this repository.
+Alternatively, you can start a web server inside the project and execute the tests directly in the browser, without the need to install any npm dependencies. `npm run server` starts a web server via `npx http-server`, use any web server you like, or just test it on the [github page](https://terabaud.github.io/math-fun/index.html) of this repository.
