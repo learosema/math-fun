@@ -1,0 +1,19 @@
+{
+  "name": "math-fun",
+  "version": "1.0.0",
+  "description": "Maths for fun and profit.",
+  "main": "index.js",
+  "module": "main.js",
+  "scripts": {
+    "test:gcd": "node -r esm src/gcd/gcd.test.mjs",
+    "test:range": "node -r esm src/range/range.test.mjs",
+    "test:prime-factors": "node -r esm src/prime-factors/prime-factors.test.mjs", 
+    "test": "npm run test:gcd -s && npm run test:range -s && npm run test:prime-factors",
+    "server": "npx http-server -c-1" 
+  },
+  "author": "Lea Rosema",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}

@@ -1,0 +1,6 @@
+# OSX & Windows cruft
+Thumbs.db
+.DS_Store
+
+# nodejs
+node_modules
