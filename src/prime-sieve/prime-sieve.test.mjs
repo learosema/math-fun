@@ -7,4 +7,7 @@ test('Prime sieve function returns prime numbers from 2..N', (assert) => {
   assert(arrayEquals([2], primeSieve(2)), 'primeSieve(-1) returns [2].');
   assert(arrayEquals([2, 3, 5, 7, 11], primeSieve(11)), 'primeSieve(11) returns 2, 3, 5, 7, 11');
   assert(arrayEquals([2, 3, 5, 7, 11, 13, 17, 19], primeSieve(20)), 'primeSieve(20) returns 2, 3, 5, 7, 11, 13, 17, 19')
+  const numPrimesToMillion = primeSieve(1000000).length;
+  assert(numPrimesToMillion === 78498, 'Number of primes up to 1 million equals 78498.');
+
 });

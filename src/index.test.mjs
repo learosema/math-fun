@@ -1,3 +1,4 @@
+import './bit-buffer/bit-buffer.test.mjs';
 import './complex-number/complex-number.test.mjs'
 import './gcd/gcd.test.mjs';
 import './range/range.test.mjs';
