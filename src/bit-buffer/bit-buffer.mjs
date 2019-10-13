@@ -1,10 +1,21 @@
 export class BitBuffer {
+
+  /**
+   * Create a bitwise buffer
+   * 
+   * @param {Number} length number of bits
+   */
   constructor(length) {
     this.length = length;
     this.byteLength = ((length / 8)|0) + ((length % 8) > 0 ? 1 : 0);
     this.buffer = new Uint8Array(this.byteLength);
   }
 
+  /**
+   * Get the n-th bit of the buffer.
+   * 
+   * @param {Number} n bit offset 
+   */
   getBit(n) {
     if (n < 0 || n >= this.length) {
       return false;
@@ -12,6 +23,12 @@ export class BitBuffer {
     return !!(this.buffer[(n / 8)|0] & (1 << (n % 8)));
   }
 
+  /**
+   * Set the n-th bit of the buffer.
+   * 
+   * @param {Number} n bit offset
+   * @param {Boolean} value true or false to set/unset the bit values 
+   */
   setBit(n, value) {
     const offset = (n / 8)|0
     const bit = (n % 8);
@@ -23,6 +40,11 @@ export class BitBuffer {
     return this;
   }
 
+  /**
+   * Fill all bits of the buffer
+   * 
+   * @param {Boolean} value true or false to set/unset the bit values 
+   */
   fill(value) {
     const fillValue = !!value ? 255 : 0;
     for (let i = 0; i < this.byteLength; i++) {
@@ -31,6 +53,11 @@ export class BitBuffer {
     return this;
   }
 
+  /**
+   * Get all offsets of set bits of the buffer
+   * 
+   * @returns {Array} array of bit offsets
+   */
   getOffsets() {
     const result = []
     for (let i = 0; i < this.length; i++) {
