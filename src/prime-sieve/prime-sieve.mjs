@@ -1,6 +1,3 @@
-import { test } from "../test-framework/test.mjs";
-import { arrayEquals } from '../test-framework/array-utils.mjs';
-
 export function primeSieve(N = 100) {
   const result = Array(N + 1).fill(0).map((_, i) => i);
   result[0] = result[1] = false;
