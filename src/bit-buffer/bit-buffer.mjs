@@ -15,6 +15,7 @@ export class BitBuffer {
    * Get the n-th bit of the buffer.
    * 
    * @param {Number} n bit offset 
+   * @returns {Boolean} true/false if the bit is set/unset
    */
   getBit(n) {
     if (n < 0 || n >= this.length) {
