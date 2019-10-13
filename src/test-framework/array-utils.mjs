@@ -1,4 +1,7 @@
 export function arrayEquals(a, b) {
+  if (!a || !b) {
+    return false;
+  }
   if (a.length !== b.length) {
     return false;
   }

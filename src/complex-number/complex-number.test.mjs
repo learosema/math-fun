@@ -131,62 +131,62 @@ test('Absolute value of a purely imaginary number with negative imaginary part',
   assert(actual === expected, '(0-5i).abs equals 5');
 });
 
-  test('Absolute value of a number with real and imaginary part', (assert) => {
-    const expected = 5;
-    const actual = new ComplexNumber(3, 4).abs;
+test('Absolute value of a number with real and imaginary part', (assert) => {
+  const expected = 5;
+  const actual = new ComplexNumber(3, 4).abs;
 
-    assert(actual === expected, '(3+4i).abs equals 5');
-  });
+  assert(actual === expected, '(3+4i).abs equals 5');
+});
 
-  test('Conjugate a purely real number', (assert) => {
-    const expected = new ComplexNumber(5, 0);
-    const actual = new ComplexNumber(5, 0).conj;
+test('Conjugate a purely real number', (assert) => {
+  const expected = new ComplexNumber(5, 0);
+  const actual = new ComplexNumber(5, 0).conj;
 
-    assert(actual.equals(expected), '(5+0i).conj equals 5.');
-  });
+  assert(actual.equals(expected), '(5+0i).conj equals 5.');
+});
 
-  test('Conjugate a purely imaginary number', (assert) => {
-    const expected = new ComplexNumber(0, -5);
-    const actual = new ComplexNumber(0, 5).conj;
+test('Conjugate a purely imaginary number', (assert) => {
+  const expected = new ComplexNumber(0, -5);
+  const actual = new ComplexNumber(0, 5).conj;
 
-    assert(actual.equals(expected), '(0+5i).conj equals 0-5i');
-  });
+  assert(actual.equals(expected), '(0+5i).conj equals 0-5i');
+});
 
-  test('Conjugate a number with real and imaginary part', (assert) => {
-    const expected = new ComplexNumber(1, -1);
-    const actual = new ComplexNumber(1, 1).conj;
+test('Conjugate a number with real and imaginary part', (assert) => {
+  const expected = new ComplexNumber(1, -1);
+  const actual = new ComplexNumber(1, 1).conj;
 
-    assert(actual.equals(expected), '(1+1i).conj equals (1-1i).');
-  });
+  assert(actual.equals(expected), '(1+1i).conj equals (1-1i).');
+});
 
-  test('Euler\'s identity/formula', (assert) => {
-    const expected = new ComplexNumber(-1, 0);
-    const actual = new ComplexNumber(0, Math.PI).exp;
+test('Euler\'s identity/formula', (assert) => {
+  const expected = new ComplexNumber(-1, 0);
+  const actual = new ComplexNumber(0, Math.PI).exp;
 
-    assert(isCloseTo(actual.real, expected.real), '0+i*pi is close to -1+0i');
-    assert(isCloseTo(actual.imag, expected.imag), '0+i*pi is close to -1+0i');
-  });
+  assert(isCloseTo(actual.real, expected.real), '0+i*pi is close to -1+0i');
+  assert(isCloseTo(actual.imag, expected.imag), '0+i*pi is close to -1+0i');
+});
 
-  test('Exponential of 0', (assert) => {
-    const expected = new ComplexNumber(1, 0);
-    const actual = new ComplexNumber(0, 0).exp;
+test('Exponential of 0', (assert) => {
+  const expected = new ComplexNumber(1, 0);
+  const actual = new ComplexNumber(0, 0).exp;
 
-    assert(isCloseTo(actual.real, expected.real), '(0).exp is close to 0');
-    assert(isCloseTo(actual.imag, expected.imag), '(0).exp is close to 0');
-  });
+  assert(isCloseTo(actual.real, expected.real), '(0).exp is close to 0');
+  assert(isCloseTo(actual.imag, expected.imag), '(0).exp is close to 0');
+});
 
-  test('Exponential of a purely real number', (assert) => {
-    const expected = new ComplexNumber(Math.E, 0);
-    const actual = new ComplexNumber(1, 0).exp;
+test('Exponential of a purely real number', (assert) => {
+  const expected = new ComplexNumber(Math.E, 0);
+  const actual = new ComplexNumber(1, 0).exp;
 
-    assert(isCloseTo(actual.real, expected.real), '(1).exp is close to E');
-    assert(isCloseTo(actual.imag, expected.imag), '(1).exp is close to E');
-  });
+  assert(isCloseTo(actual.real, expected.real), '(1).exp is close to E');
+  assert(isCloseTo(actual.imag, expected.imag), '(1).exp is close to E');
+});
 
-  test('Exponential of a number with real and imaginary part', (assert) => {
-    const expected = new ComplexNumber(-2, 0);
-    const actual = new ComplexNumber(Math.LN2, Math.PI).exp;
+test('Exponential of a number with real and imaginary part', (assert) => {
+  const expected = new ComplexNumber(-2, 0);
+  const actual = new ComplexNumber(Math.LN2, Math.PI).exp;
 
-    assert(isCloseTo(actual.real, expected.real), '(ln2+i*pi).exp is close to -2');
-    assert(isCloseTo(actual.imag, expected.imag), '(ln2+i*pi).exp is close to -2');
-  });
+  assert(isCloseTo(actual.real, expected.real), '(ln2+i*pi).exp is close to -2');
+  assert(isCloseTo(actual.imag, expected.imag), '(ln2+i*pi).exp is close to -2');
+});
