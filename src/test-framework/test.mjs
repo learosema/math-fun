@@ -1,5 +1,33 @@
 /**
  * Minimal testing framework
+ */
+
+let indent = 0;
+
+function indentation() {
+  return Array(indent + 1).join('  ');
+}
+
+/**
+ * Describe function
+ * 
+ * @param {string} description 
+ * @param {function} testBody 
+ */
+export function describe(description, testBody) {
+  const underline = Array(description.length + 1).join('-');
+  console.log();
+  console.log(indentation(), description);
+  console.log(indentation(), underline);
+  if (typeof testBody === "function") {
+    indent++;
+    testBody();
+    indent--;
+  }
+}
+
+/**
+ * Test function.
  * 
  * @param {string} description Description of the test 
  * @param {Function} testBody test body function
@@ -10,7 +38,7 @@ export function test(description, testBody) {
       throw new Error();
     }
   };
-  console.log('[ TEST ]', description);
+  console.log(indentation(), '[ TEST ]', description);
   try {
     testBody(assert);
   } catch (ex) {
@@ -23,5 +51,14 @@ export function test(description, testBody) {
       // In node.js, exit with code -1
       process.exit(-1);
     }
+  }
+}
+
+export function shouldThrow(assert, message, testBody) {
+  try {
+    testBody();
+    assert(false, message);
+  } catch (ex) {
+    assert(true, message);
   }
 }
