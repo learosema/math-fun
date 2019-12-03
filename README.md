@@ -11,4 +11,4 @@ Also, the test framework is also fairly minimal; it's just a wrapper around `con
 
 To run the test in node, type `npm install` and `npm test`.
 
-Alternatively, you can start a web server inside the project and execute the tests directly in the browser, without the need to install any npm dependencies. `npm run server` starts a web server via `npx http-server`, use any web server you like, or just test it on the [github page](https://terabaud.github.io/math-fun/index.html) of this repository.
+Alternatively, you can start a web server inside the project and execute the tests directly in the browser, without the need to install any npm dependencies. `npm run server` starts a local web server at port 1337. You can also just go to the [github page](https://terabaud.github.io/math-fun/index.html) of this repository and open the dev console.
