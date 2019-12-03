@@ -13,7 +13,7 @@ export class Mat {
         this.numCols = this.numRows = dimension; 
         return;
       }
-      throw Error("ArgumentError");
+      throw Error('ArgumentError');
     }
   }
 
@@ -109,7 +109,7 @@ export class Mat {
       }
       return Mat.fromArray(multipliedValues);
     }
-    throw Error("ArgumentError");
+    throw Error('ArgumentError');
   }
 
   toString() {
