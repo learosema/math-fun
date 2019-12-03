@@ -1,4 +1,4 @@
-import { Vec3 } from './math3d.mjs';
+import { Vec3 } from './vector.mjs';
 
 // glOrtho(left, right, bottom, top, zNear, zFar)
 export function ortho(l, r, b, t, zn, zf){
