@@ -224,3 +224,111 @@ export class Vec3 {
       this.z === otherVec.z; 
   }
 }
+
+export class Vec4 {
+  constructor(x, y, z, a) {
+    if (arguments.length === 1) {
+      if (typeof x === 'number') {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.a = a;
+        return;
+      }
+      throw Error('ArgumentError');
+    }
+    if (arguments.length === 2) {
+      if (x instanceof Vec3 && typeof y === 'number') {
+        this.x = x.x;
+        this.y = x.y;
+        this.z = x.z;
+        this.a = y;
+        return;
+      }
+      throw Error('ArgumentError');
+    }
+    if (arguments.length === 3) {
+      if (typeof x === 'number' && typeof y === 'number' && typeof z === 'number') {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.a = 0;
+        return;
+      }
+      throw Error('ArgumentError');
+    }
+    if (arguments.length === 4) {
+      if (typeof x === 'number' && typeof y === 'number' && 
+        typeof z === 'number' && typeof a === 'number') {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.a = a;
+        return;
+      }
+      throw Error('ArgumentError');
+    }
+    throw Error('ArgumentError');
+  }
+
+  get r() {
+    return this.x;
+  }
+
+  set r(value) {
+    this.x = value;
+  }
+
+  get g() {
+    return this.y;
+  }
+
+  set g(value) {
+    this.y = value;
+  }
+
+  get b() {
+    return this.z;
+  }
+
+  set b(value) {
+    this.z = value;
+  }
+
+  get rgb() {
+    return new Vec3(this.x, this.y, this.z);
+  }
+
+  get xyz() {
+    return new Vec3(this.x, this.y, this.z);
+  }
+
+  get zyx() {
+    return new Vec3(this.z, this.y, this.x);
+  }
+
+  get xy() {
+    return new Vec2(this.x, this.y);
+  }
+
+  get xz() {
+    return new Vec2(this.x, this.z);
+  }
+
+  get yz() {
+    return new Vec2(this.y, this.z);
+  }
+
+  get yx() {
+    return new Vec2(this.y, this.x);
+  }
+  
+  get zx() {
+    return new Vec2(this.z, this.x);
+  }
+
+  get zy() {
+    return new Vec2(this.z, this.y);
+  }
+
+}
